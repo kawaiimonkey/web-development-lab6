@@ -1,0 +1,3 @@
+The Great Gatsby,1,F. Scott Fitzgerald,1925,Yes
+To Kill a Mockingbird,2,Harper Lee,1960,No
+The Catcher in the Rye,3,J.D. Salinger,1951,Yes
