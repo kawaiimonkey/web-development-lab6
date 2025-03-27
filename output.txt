@@ -1,0 +1,549 @@
+Enter the book catalog file name: book.txt
+File does not exist.
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: q
+Goodbye!
+
+Enter the book catalog file name: books.txt
+3 books have been loaded
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: H
+Invalid option. Please try again.
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option:
+
+Enter the book catalog file name: books.txt
+3 books have been loaded
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: l
+------------------------------------------------------------------------------------------
+Title                    ID              Author                     Year           Available
+------------------------------------------------------------------------------------------
+The Great Gatsby         1              F. Scott Fitzgerald         1925              Yes
+To Kill a Mockingbird    2              Harper Lee                  1960              No
+The Catcher in the Rye   3              J.D. Salinger               1951              Yes
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option:
+
+Enter the book catalog file name: books.txt
+3 books have been loaded
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: s
+Enter book title or ID to search: 5
+Book not Found
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: S
+Enter book title or ID to search: 2
+------------------------------------------------------------------------------------------
+Title                    ID              Author                     Year           Available
+------------------------------------------------------------------------------------------
+To Kill a Mockingbird    2              Harper Lee                  1960              No
+1 books found
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: s
+Enter book title or ID to search: the
+------------------------------------------------------------------------------------------
+Title                    ID              Author                     Year           Available
+------------------------------------------------------------------------------------------
+The Great Gatsby         1              F. Scott Fitzgerald         1925              Yes
+The Catcher in the Rye   3              J.D. Salinger               1951              Yes
+2 books found
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option:
+
+Enter the book catalog file name: books.txt
+3 books have been loaded
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: t
+---------------------------------------------------------------------------
+                         *** Summary of Books ***
+# of Available Books         # of Checked Books          Total # of Books
+---------------------------------------------------------------------------
+         2                             1                        3
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option:
+
+Enter the book catalog file name: books.txt
+3 books have been loaded      
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: c
+Enter book ID to checkout: 5
+Book not found
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: c
+Enter book ID to checkout: 2
+Book #2 is already checked out.
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: c
+Enter book ID to checkout: 1
+Book #1 is checked out successfully.
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: l
+------------------------------------------------------------------------------------------
+Title                    ID              Author                     Year           Available
+------------------------------------------------------------------------------------------
+The Great Gatsby         1              F. Scott Fitzgerald         1925              No
+To Kill a Mockingbird    2              Harper Lee                  1960              No
+The Catcher in the Rye   3              J.D. Salinger               1951              Yes
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option:
+
+Enter the book catalog file name: books.txt
+3 books have been loaded
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: r
+Enter book ID to return: 6
+Book not found
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: R
+Enter book ID to return: 3
+Book #3 is already available.
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: R
+Enter book ID to return: 1
+Book #1 is returned successfully.
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: L
+------------------------------------------------------------------------------------------
+Title                    ID              Author                     Year           Available
+------------------------------------------------------------------------------------------
+The Great Gatsby         1              F. Scott Fitzgerald         1925              Yes
+To Kill a Mockingbird    2              Harper Lee                  1960              No
+The Catcher in the Rye   3              J.D. Salinger               1951              Yes
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: 
+
+Enter the book catalog file name: books.txt
+3 books have been loaded
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: a
+Enter book ID: 1
+Book with ID# 1 already exists.
+****************************** 
+Library Book Management System 
+****************************** 
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals        
+Q) Quit
+Select an option: A
+Enter book ID: 4
+Enter book title: Dummy Adventure
+Enter book author: Unknown
+Enter book year: 2024
+Book added successfully.      
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: L
+------------------------------------------------------------------------------------------
+Title                    ID              Author                     Year           Available
+------------------------------------------------------------------------------------------
+The Great Gatsby         1              F. Scott Fitzgerald         1925              Yes
+To Kill a Mockingbird    2              Harper Lee                  1960              No
+The Catcher in the Rye   3              J.D. Salinger               1951              Yes
+Dummy Adventure          4              Unknown                     2024              Yes
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option:
+
+Enter the book catalog file name: books.txt
+4 books have been loaded      
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: e
+Enter book ID to edit: 5
+Book not found.
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: E
+Enter book ID to edit: 4
+Enter new title: Unknown Adventure
+Enter new author: A. Mike
+Enter new year: 2025
+Book #4 is edited successfully.
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: L
+------------------------------------------------------------------------------------------
+Title                    ID              Author                     Year           Available
+------------------------------------------------------------------------------------------
+The Great Gatsby         1              F. Scott Fitzgerald         1925              Yes
+To Kill a Mockingbird    2              Harper Lee                  1960              No
+The Catcher in the Rye   3              J.D. Salinger               1951              Yes
+Unknown Adventure        4              A. Mike                     2025              Yes
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option:
+
+Enter the book catalog file name: books.txt
+4 books have been loaded
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: D
+Enter book ID to delete: 5
+Book not found.
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: d
+Enter book ID to delete: 4
+Book with ID# 4 deleted successfully.
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: L
+------------------------------------------------------------------------------------------
+Title                    ID              Author                     Year           Available
+------------------------------------------------------------------------------------------
+The Great Gatsby         1              F. Scott Fitzgerald         1925              Yes
+To Kill a Mockingbird    2              Harper Lee                  1960              No
+The Catcher in the Rye   3              J.D. Salinger               1951              Yes
+******************************
+Library Book Management System
+******************************
+A) Add a book
+L) List books
+E) Edit a book
+S) Search for a book
+D) Delete a book
+C) Checkout a book
+R) Return a book
+T) Display books totals
+Q) Quit
+Select an option: q
+Goodbye!
