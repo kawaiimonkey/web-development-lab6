@@ -1,39 +1,40 @@
 from typing import Final
 import os
 
-OPTION_DIC:Final = {'A)':'Add a book', 'L)':'List books',
-                     'E)':'Edit a book', 'S)':'Search for a book',
-                       'D)':'Delete a book', 'C)':'Checkout a book',
-                         'R)':'Return a book', 'T)':'Display books totals', 'Q)':'Quit'}
-
-#Pragunya
+#output a list of options and returns choice value
 def print_menu():
-    print('*'*30)
-    print(f"{'Library Book Management System':^30}")
-    print('*'*30)
-    for key, value in OPTION_DIC.items():
-        print(f'{key} {value}')
+    print("******************************")
+    print("Library Book Management System")
+    print("******************************")
+    print("A) Add a book")
+    print("L) List books")
+    print("E) Edit a book")
+    print("S) Search for a book")
+    print("D) Delete a book")
+    print("C) Checkout a book")
+    print("R) Return a book")
+    print("T) Display books totals")
+    print("Q) Quit")
+    return input("Select an option: ").lower()
     
-#Pragunya
+#format details of book in string type
 def format_record(book_info):
-    book_record = ','.join(book_info)
-    return book_record
+    return f"{book_info[0]},{book_info[1]},{book_info[2]},{book_info[3]},{book_info[4]}"
 
-#Pragunya
+#show all books
 def list_books(list_of_books):
-    print('-'*90)
-    print(f"{'Title':<25}{'ID':>0}{'Author':>20}{'Year':>25}{'Available':>20}")
-    print('-'*90)
-    for book in list_of_books:        
-        print(f'{book[0]:<25}{book[1]:<15}{book[2]:<28}{book[3]:<18}{book[4]:>0}')
+    print("-" * 82)
+    print(f"{'Title':<25}{'ID':<5}{'Author':<20}{'Year':<6}{'Available'}")
+    print("-" * 82)
+    for book in list_of_books:
+        print(f"{book[0]:<25}{book[1]:<5}{book[2]:<20}{book[3]:<6}{book[4]}")
     
-    
-
+#add a book and save in a file
 def add_book(file_name, list_of_books):
     book_id = input('Enter book ID: ')
     for book in list_of_books:
         if book_id == book[1]:
-            return print('Book with ID# 1 already exists.')
+            return print(f'Book with ID# {book_id} already exists.')
     book_title = input('Enter book title: ')
     book_author = input('Enter book author: ')
     book_year = input('Enter book year: ')
@@ -42,6 +43,7 @@ def add_book(file_name, list_of_books):
     update_books(file_name, list_of_books)
     print('Book added successfully.')
 
+#edit a book by id and update the data of the book
 def edit_book(file_name, list_of_books):
     book_id = input('Enter book ID to edit: ')
     for book in list_of_books:
@@ -53,6 +55,7 @@ def edit_book(file_name, list_of_books):
             return print(f'Book #{book[1]} is edited successfully.')
     return print('Book not found.')
 
+#search books by id or name of book
 def search_book(list_of_books):
     search = input('Enter book title or ID to search: ')
     count = 0
@@ -61,10 +64,9 @@ def search_book(list_of_books):
         if search.isdigit() == True and search == book[1]:
             count +=1
             found_list.append(book)
-        elif search.isalpha() == True and search in book[0] or search.capitalize() in book[0]:
+        elif search.isalpha() == True and (search in book[0] or search.lower() in book[0].lower()):
             count +=1
-            found_list.append(book)
-            
+            found_list.append(book)        
     if count != 0:
         print('-'*90)
         print(f"{'Title':<25}{'ID':>0}{'Author':>20}{'Year':>25}{'Available':>20}")
@@ -75,6 +77,7 @@ def search_book(list_of_books):
     else:
         return print('Book not Found')
 
+#delete a book by id and update data
 def delete_book(file_name, list_of_books):
     del_id = input('Enter book ID to delete: ')
     for index in range(len(list_of_books)):
@@ -85,20 +88,20 @@ def delete_book(file_name, list_of_books):
     return print('Book not found.')
     
 
-#Pragunya
+#checkout a book by id and update data
 def checkout_book(file_name, list_of_books):
-    checkout_id = input('Enter book ID to checkout: ')
+    book_id = input("Enter book ID to checkout: ")
     for book in list_of_books:
-        if book[1] == checkout_id and book[4] == 'Yes':
-            book[4] = 'No'
-            update_books(file_name, list_of_books)
-            return print(f'Book #{checkout_id} is checked out successfully.')
-        elif book[1] == checkout_id and book[4] == 'No':
-            return print(f'Book #{checkout_id} is already checked out.')
-    return print('Book not found')
-    
+        if book[1] == book_id:
+            if book[4] == "No":
+                return f"Book #{book_id} is already checked out."
+            else:
+                book[4] = "No"
+                update_books(file_name, list_of_books)
+                return f"Book #{book_id} is checked out successfully."
+    return "Book not found."
 
-
+#return a book by id and status of return
 def return_book(file_name, list_of_books):
     checkout_id = input('Enter book ID to return: ')
     for book in list_of_books:
@@ -110,7 +113,7 @@ def return_book(file_name, list_of_books):
             return print(f'Book #{checkout_id} is already available.')
     return print('Book not found')
     
-
+#Display the total number of states according to the book return status
 def display_totals(list_of_books):
     available = 0
     checked = 0
@@ -127,7 +130,7 @@ def display_totals(list_of_books):
     print('-'*75)
     print(f"{available:>10}{checked:>30}{total:>25}")
 
-
+#load data of books from file and store in a list
 def load_books(file_name):
     book_list = []
 
@@ -147,7 +150,7 @@ def load_books(file_name):
             print('File does not exist.')
     return book_list
 
-#Yufeng
+#update data of books
 def update_books(file_name, list_of_books):
     with open(file_name, 'w') as f:
         for book in list_of_books:
@@ -155,12 +158,14 @@ def update_books(file_name, list_of_books):
             f.write(line+'\n')
     return
 
+
+#operation of system
 def main():
     file_name = input('Enter the book catalog file name: ')
     list_of_books = load_books(file_name)
 
-    print_menu()
-    option = input('Select an option: ')
+    
+    option = print_menu()
     
     while option.lower() != 'q':
         if option.lower() == 'a':
@@ -174,7 +179,7 @@ def main():
         elif option.lower() == 'd':
             delete_book(file_name, list_of_books)
         elif option.lower() == 'c':
-            checkout_book(file_name, list_of_books)
+            print(checkout_book(file_name, list_of_books))
         elif option.lower() == 'r':
             return_book(file_name, list_of_books)
         elif option.lower() == 't':
@@ -182,8 +187,7 @@ def main():
         else:
             print('Invalid option. Please try again.')
 
-        print_menu()
-        option = input('Select an option: ')
+        option = print_menu()
     
     print('Goodbye!')
 
