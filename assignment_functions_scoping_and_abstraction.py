@@ -1,7 +1,26 @@
+'''
+Program Name: assignment_functions_scoping_and_abstraction.py
+Description: A system for managing books and member checkouts. 
+            • Storing and loading book information into/from a file.
+            • Adding a new book to the catalog.
+            • Displaying a list of books in the catalog.
+            • Editing book details (e.g., title, author, year, availability).
+            • Searching for a book by its title or ID.
+            • Deleting a book from the catalog.
+            • Checking out a book to a member.
+            • Returning a book.
+            • Calculating and displaying the total number of books available and checked out.
+Author: Licheng Huang, Pragunya Wadhwa, Yufeng Fan
+Date: Mar. 28, 2025
+'''
 from typing import Final
 import os
 
-#output a list of options and returns choice value
+'''
+Function Name: print_menu
+Description: print a list of menu options and returns choice value
+Returns: str - (string) - menu option which user select
+'''
 def print_menu():
     print("******************************")
     print("Library Book Management System")
@@ -17,11 +36,21 @@ def print_menu():
     print("Q) Quit")
     return input("Select an option: ").lower()
     
-#format details of book in string type
+'''
+Function Name: format_record
+Description: format details of book in string type
+Parameters: book_info - required parameter (list) - the book info
+Returns: str - (string) - book info in string type seperated by comma
+'''
 def format_record(book_info):
     return f"{book_info[0]},{book_info[1]},{book_info[2]},{book_info[3]},{book_info[4]}"
 
-#show all books
+'''
+Function Name: list_books
+Description: show all books
+Parameters: list_of_books - required parameter (list) - the book list
+Returns: None
+'''
 def list_books(list_of_books):
     print("-" * 82)
     print(f"{'Title':<25}{'ID':<5}{'Author':<20}{'Year':<6}{'Available'}")
@@ -29,7 +58,13 @@ def list_books(list_of_books):
     for book in list_of_books:
         print(f"{book[0]:<25}{book[1]:<5}{book[2]:<20}{book[3]:<6}{book[4]}")
     
-#add a book and save in a file
+'''
+Function Name: add_book
+Description: add a book and save in a file
+Parameters: file_name - required parameter (string) - the category file name
+            list_of_books - required parameter (list) - the book list
+Returns: None
+'''
 def add_book(file_name, list_of_books):
     book_id = input('Enter book ID: ')
     for book in list_of_books:
@@ -43,7 +78,13 @@ def add_book(file_name, list_of_books):
     update_books(file_name, list_of_books)
     print('Book added successfully.')
 
-#edit a book by id and update the data of the book
+'''
+Function Name: edit_book
+Description: edit a book by id and update the data of the book
+Parameters: file_name - required parameter (string) - the category file name
+            list_of_books - required parameter (list) - the book list
+Returns: None
+'''
 def edit_book(file_name, list_of_books):
     book_id = input('Enter book ID to edit: ')
     for book in list_of_books:
@@ -55,7 +96,12 @@ def edit_book(file_name, list_of_books):
             return print(f'Book #{book[1]} is edited successfully.')
     return print('Book not found.')
 
-#search books by id or name of book
+'''
+Function Name: search_book
+Description: search books by id or name of book
+Parameters: list_of_books - required parameter (list) - the book list
+Returns: None
+'''
 def search_book(list_of_books):
     search = input('Enter book title or ID to search: ')
     count = 0
@@ -77,7 +123,13 @@ def search_book(list_of_books):
     else:
         return print('Book not Found')
 
-#delete a book by id and update data
+'''
+Function Name: delete_book
+Description: delete a book by id and update data
+Parameters: file_name - required parameter (string) - the category file name
+            list_of_books - required parameter (list) - the book list
+Returns: None
+'''
 def delete_book(file_name, list_of_books):
     del_id = input('Enter book ID to delete: ')
     for index in range(len(list_of_books)):
@@ -88,7 +140,13 @@ def delete_book(file_name, list_of_books):
     return print('Book not found.')
     
 
-#checkout a book by id and update data
+'''
+Function Name: checkout_book
+Description: checkout a book by id and update data
+Parameters: file_name - required parameter (string) - the category file name
+            list_of_books - required parameter (list) - the book list
+Returns: str - (string) - the result string of checking out 
+'''
 def checkout_book(file_name, list_of_books):
     book_id = input("Enter book ID to checkout: ")
     for book in list_of_books:
@@ -101,7 +159,13 @@ def checkout_book(file_name, list_of_books):
                 return f"Book #{book_id} is checked out successfully."
     return "Book not found."
 
-#return a book by id and status of return
+'''
+Function Name: return_book
+Description: return a book by id and status of return
+Parameters: file_name - required parameter (string) - the category file name
+            list_of_books - required parameter (list) - the book list
+Returns: None
+'''
 def return_book(file_name, list_of_books):
     checkout_id = input('Enter book ID to return: ')
     for book in list_of_books:
@@ -113,7 +177,12 @@ def return_book(file_name, list_of_books):
             return print(f'Book #{checkout_id} is already available.')
     return print('Book not found')
     
-#Display the total number of states according to the book return status
+'''
+Function Name: display_totals
+Description: Display the total number of states according to the book return status
+Parameters: list_of_books - required parameter (list) - the book list
+Returns: None
+'''
 def display_totals(list_of_books):
     available = 0
     checked = 0
@@ -130,7 +199,12 @@ def display_totals(list_of_books):
     print('-'*75)
     print(f"{available:>10}{checked:>30}{total:>25}")
 
-#load data of books from file and store in a list
+'''
+Function Name: load_books
+Description: load data of books from file and store in a list
+Parameters: file_name - required parameter (string) - the category file name
+Returns: book_list - (list) - the list of book info
+'''
 def load_books(file_name):
     book_list = []
 
@@ -150,7 +224,13 @@ def load_books(file_name):
             print('File does not exist.')
     return book_list
 
-#update data of books
+'''
+Function Name: update_books
+Description: update data of books
+Parameters: file_name - required parameter (string) - the category file name
+            list_of_books - required parameter (list) - the book list
+Returns: None
+'''
 def update_books(file_name, list_of_books):
     with open(file_name, 'w') as f:
         for book in list_of_books:
@@ -159,7 +239,11 @@ def update_books(file_name, list_of_books):
     return
 
 
-#operation of system
+'''
+Function Name: main
+Description: operation of system
+Returns: None
+'''
 def main():
     file_name = input('Enter the book catalog file name: ')
     list_of_books = load_books(file_name)
