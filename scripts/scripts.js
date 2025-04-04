@@ -5,7 +5,6 @@ The instructions describe the missing logic that is needed; you will translate t
 You are encouraged to use the provided naming convention for ease of review.
 
 */
-document.addEventListener("DOMContentLoaded", function() {
 /****************** create variables ******************/
 /* create variables to hold the values for modelName and duration */
 
@@ -117,4 +116,3 @@ function changeDuration() {
 }
 
 durationButton.addEventListener("click", changeDuration);
-});
